@@ -9,6 +9,9 @@ void enqueue(int item) {
     if (rear == MAX - 1) {
         printf("Queue Overflow n");
     } else {
+        if (front == -1) {             
+            front = 0; 
+        }
         rear = rear + 1;
         q[rear] = item;
     }
