@@ -43,7 +43,7 @@ void create() {
     for (i = 0; i < n; i++) {
         scanf("%d", &a[i]);
     }
-    scanf("%d", &a[i]);
+
 }
 // displaying an array elements
 void display() {

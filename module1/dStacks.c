@@ -50,26 +50,25 @@ int main()
     int ch;
     printf("Enter the Size of the Stack\n");
     scanf("%d", &size);
-    a = (int *)malloc(size * sizeof(a));
-    for (;;)
-    {
+    a = (int *)malloc(size * sizeof(int));
+    for (;;) {
         printf("1.Push 2.display 3.pop 4.exit\n");
         printf("Enter your choice\n");
         scanf("%d", &ch);
-        switch (ch)
-        {
-        case 1:
-            push();
-            break;
-        case 2:
-            display();
-            break;
-        case 3:
-            pop();
-            break;
-        case 4:
-            free(a);
-            exit(0);
+        switch (ch) {
+                
+            case 1:
+                push();
+                break;
+            case 2:
+                display();
+                break;
+            case 3:
+                pop();
+                break;
+            case 4:  
+                free(a);
+                exit(0);
         }
     }
 }
