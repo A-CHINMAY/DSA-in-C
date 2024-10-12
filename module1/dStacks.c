@@ -8,7 +8,7 @@ void push() {
         printf("Stack is overflow\n");
         printf("Increasing the stack size by twice\n");
         size = 2 * size;
-        a = (int *)realloc(a, size * sizeof(a));
+        a = (int *)realloc(a, size * sizeof(int));
         top = top + 1;
         printf("Enter the element to Push\n");
         scanf("%d", &ele);
