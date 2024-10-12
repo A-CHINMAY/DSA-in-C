@@ -7,12 +7,12 @@ struct STACK{
     int top;
 };
 
-void push(struct STACK *S, int value) {
+void push(struct STACK *S, int item) {
     if (S->top == SIZE - 1) {
         printf("Stack overflow\n");
     } else {
         S->top++;
-        S->data[S->top] = value;
+        S->data[S->top] = item;
     }
 }
 
@@ -40,7 +40,7 @@ void display(struct STACK *S){
 int main() {
     struct STACK S;
     S.top = -1; // Initialize the stack as empty
-    int choice, value;
+    int choice, item;
     for(;;){
         printf("\nStack Operations:\n");
         printf("1. Push\n2. Pop\n3. Display\n4. Exit\n");
@@ -51,8 +51,8 @@ int main() {
         {
         case 1:
             printf("Enter the value to push: ");
-            scanf("%d", &value);
-            push(&S, value);
+            scanf("%d", &item);
+            push(&S, item);
             break;
 
         case 2:

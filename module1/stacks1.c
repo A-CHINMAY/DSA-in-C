@@ -14,18 +14,17 @@ float pop(int *top) {
 }
 
 float operate(float opr1, float opr2, char symbol) {
-    switch (symbol)
-    {
-    case '+':
-        return opr1 + opr2;
-    case '-':
-        return opr1 - opr2;
-    case '*':
-        return opr1 * opr2;
-    case '/':
-        return opr1 / opr2;
-    default:
-        return 0;
+    switch (symbol) {
+        case '+':
+            return opr1 + opr2;
+        case '-':
+            return opr1 - opr2;
+        case '*':
+            return opr1 * opr2;
+        case '/':
+            return opr1 / opr2;
+        default:
+            return 0;
     }
 }
 

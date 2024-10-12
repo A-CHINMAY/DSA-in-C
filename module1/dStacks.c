@@ -3,7 +3,7 @@
 int *a,size,top = -1;
 
 void push() {
-    int ele;
+    int item;
     if (top == size - 1) {
         printf("Stack is overflow\n");
         printf("Increasing the stack size by twice\n");
@@ -11,25 +11,25 @@ void push() {
         a = (int *)realloc(a, size * sizeof(int));
         top = top + 1;
         printf("Enter the element to Push\n");
-        scanf("%d", &ele);
-        *(a + top) = ele;
+        scanf("%d", &item);
+        *(a + top) = item;
     }
     else {
         top = top + 1;
         printf("Enter the element to Push\n");
-        scanf("%d", &ele);
-        *(a + top) = ele;
+        scanf("%d", &item);
+        *(a + top) = item;
     }
 }
 void pop() {
-    int ele;
+    int item;
     if (top == -1) {
         printf("Stack Underflow\n");
         return;
     }
     else {
-        ele = *(a + top);
-        printf("The deleted element is %d", ele);
+        item = *(a + top);
+        printf("The deleted element is %d", item);
         top = top - 1;
     }
 }
@@ -45,8 +45,7 @@ void display() {
     }
 }
 
-int main()
-{
+int main() {
     int ch;
     printf("Enter the Size of the Stack\n");
     scanf("%d", &size);

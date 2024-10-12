@@ -61,21 +61,20 @@ int main() {
     printf("1: Push\n2: Pop\n3: Display\n4: Exit\nEnter your choice: ");
     scanf("%d", &choice);
 
-    switch (choice)
-    {
-    case 1:
-        push(i);
-        break;
-    case 2:
-        pop(i);
-        break;
-    case 3:
-        display(i);
-        break;
-    case 4:
-        exit(0);
-        break;
-    default:
-        printf("Invalid choice!\n");
+    switch (choice) {
+        case 1:
+            push(i);
+            break;
+        case 2:
+            pop(i);
+            break;
+        case 3:
+            display(i);
+            break;
+        case 4:
+            exit(0);
+            break;
+        default:
+            printf("Invalid choice!\n");
     }
- }
+}
