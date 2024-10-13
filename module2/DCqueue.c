@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 int *q;           
 int front = -1; 
 int rear = -1;    

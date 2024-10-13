@@ -25,7 +25,6 @@ void dequeue() {
     } else {
         int delitem = q[front];
         printf("Deleted element is: %d\n", delitem);
-
         if (front == rear) { 
             front = -1;
             rear = -1; 

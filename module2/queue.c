@@ -10,7 +10,7 @@ void enqueue(int item) {
         printf("Queue Overflow n");
     } else {
         if (front == -1) {             
-            front = 0; 
+            front = front+1; 
         }
         rear = rear + 1;
         q[rear] = item;
