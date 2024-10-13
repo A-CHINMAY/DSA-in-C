@@ -23,7 +23,6 @@ NODE InsertatEnd(NODE start, int item) {
     if (start == NULL) {
         return temp;
     }
-
     cur = start;
     while (cur->addr != NULL) {
         cur = cur->addr;
@@ -38,7 +37,6 @@ NODE deleteatbeg(NODE start, int *item) {
         printf("List is empty\n");
         return NULL;
     }
-
     temp = start;
     start = start->addr;
     *item = temp->data;
@@ -53,7 +51,6 @@ NODE deleteatEnd(NODE start, int *item) {
         printf("List is empty\n");
         return NULL;
     }
-
     if (start->addr == NULL) { // Only one node in the list
         *item = start->data;
         printf("Node deleted is: %d\n", *item);
@@ -131,12 +128,10 @@ int main() {
     
             case 6:
                 printf("Exiting...\n");
-                exit(0); // Exit the program
+                exit(0);
     
             default:
-                printf("Invalid choice! Please enter a valid option.\n");
+                printf("Invalid choice!\n");
         }
     }
-
-    return 0;
 }
