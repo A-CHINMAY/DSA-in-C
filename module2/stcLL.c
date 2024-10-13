@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 5
-int count = 0;
+int top = -1;
 
 struct node {
     int data;
@@ -11,14 +11,14 @@ typedef struct node *NODE;
 
 NODE Push(NODE start, int item) {
     NODE temp;
-    if (count >= SIZE) {
+    if (top == SIZE-1) {
         printf("Stack overflow\n");
         return start;
     }
     temp = (NODE)malloc(sizeof(struct node));
     temp->data = item;
     temp->addr = start;
-    count = count + 1;
+    top = top + 1;
     return temp;
 }
 
@@ -32,7 +32,7 @@ NODE Pop(NODE start) {
     start = start->addr;
     printf("Node deleted is %d\n", temp->data);
     free(temp);
-    count = count - 1;
+    top = top - 1;
     return start;
 }
 
@@ -77,5 +77,4 @@ int main() {
                 printf("Invalid choice\n");
         }
     }
-    return 0;
 }
