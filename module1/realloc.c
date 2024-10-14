@@ -4,6 +4,10 @@ int main() {
     int *ptr = NULL;
     int i = 0;
     ptr = (int *)malloc(sizeof(int));
+    if (ptr == NULL) {
+        printf("ERROR: memory allocation fail\n");
+        return 1;
+    }
     *ptr = 5;
     printf("Existing value:%d\n", *ptr);
     ptr = (int *)realloc(ptr, sizeof(int) * 5);

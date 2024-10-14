@@ -6,6 +6,10 @@ int main() {
     printf("ENTER THE SIZE OF ARRAY:");
     scanf("%d", &len);
     ptr = (int *)malloc(len * sizeof(int));
+    if (ptr == NULL) {
+        printf("ERROR: memory allocation fail\n");
+        return 1;
+    }
     printf("ENTER THE ELEMENTS:");
     for (i = 0; i < len; i++) {
         scanf("%d", &ptr[i]);
