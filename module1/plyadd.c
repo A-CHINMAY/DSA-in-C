@@ -101,6 +101,4 @@ int main() {
     // Displaying the result
     printf("Resultant polynomial after addition:\n");
     displayPoly(finishB + 1, avail - 1);
-
-    return 0;
 }

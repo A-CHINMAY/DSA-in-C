@@ -76,6 +76,4 @@ int main()
     {
         printf("Pattern not found.\n");
     }
-
-    return 0;
 } 

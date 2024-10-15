@@ -64,6 +64,4 @@ int main() {
     result = postfix_evaluate(postfix, &top);
 
     printf("Result of postfix expression evaluation: %.2f\n", result);
-
-    return 0;
 }

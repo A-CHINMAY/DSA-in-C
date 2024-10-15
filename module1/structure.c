@@ -12,6 +12,4 @@ int main() {
     scanf("%d", &person1.age);
     printf("\nName: %s\n", person1.name);
     printf("Age: %d\n", person1.age);
-
-    return 0;
 }

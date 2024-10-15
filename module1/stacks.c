@@ -64,11 +64,3 @@ void main(){
         }
     }
 }
-/*
-INTRODUCTION TO DATA STRUCTURES: Data Structures, Classifications (Primitive
-& Non-Primitive), Data structure Operations
-Review of  pointers and dynamic Memory Allocation,
-ARRAYS and STRUCTURES: Arrays, Dynamic Allocated Arrays, Structures and Unions,
-Polynomials, Sparse Matrices, representation of Multidimensional Arrays, Strings
-STACKS: Stacks, Stacks Using Dynamic Arrays, Evaluation and conversion of Expressions
-Text Book: Chapter-1:1.2   Chapter-2: 2.1 to 2.7   Chapter-3: 3.1,3.2,3.6*/

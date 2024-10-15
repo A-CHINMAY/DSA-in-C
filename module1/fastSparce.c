@@ -66,6 +66,4 @@ int main() {
 
     printf("\nTransposed Sparse Matrix:\n");
     print_sparse_matrix(b);
-
-    return 0;
 }
