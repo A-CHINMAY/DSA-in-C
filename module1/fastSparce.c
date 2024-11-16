@@ -36,6 +36,7 @@ void fast_transpose(term a[], term b[]) {
         b[j].row = a[i].col;
         b[j].col = a[i].row;
         b[j].value = a[i].value;
+        start_pos[a[i].col]++;
     }
 }
 // Function to print sparse matrix
