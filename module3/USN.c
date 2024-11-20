@@ -33,13 +33,8 @@ NODE insertfront() {
     if (start == NULL) {
         return temp;
     }
-
-<<<<<<< HEAD
     temp->addr = start;
-=======
-    temp->link = start;
     count++;
->>>>>>> 77e2bad2be61bc1c5c6a588815d93bfd58a3b83e
     return temp;
 }
 
