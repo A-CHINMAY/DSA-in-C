@@ -34,7 +34,6 @@ NODE insertfront() {
         return temp;
     }
     temp->addr = start;
-    temp->link = start;
     count++;
     return temp;
 }
