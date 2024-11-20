@@ -5,7 +5,7 @@ struct node {
     char usn[25], name[25], branch[25];
     int sem;
     long int phone;
-    struct node *link;
+    struct node *addr;
 };
 typedef struct node *NODE;
 
@@ -22,7 +22,7 @@ NODE create() {
     }
     printf("\nEnter the usn,Name,Branch, sem,PhoneNo of the student:");
     scanf("%s %s %s %d %ld", snode->usn, snode->name, snode->branch, &snode->sem, &snode->phone);
-    snode->link = NULL;
+    snode->addr = NULL;
     count++;
     return snode;
 }
@@ -34,25 +34,25 @@ NODE insertfront() {
         return temp;
     }
 
-    temp->link = start;
+    temp->addr = start;
     return temp;
 }
 
 NODE deletefront() {
     NODE temp;
     if (start == NULL) {
-        printf("\nLinked list is empty");
+        printf("\naddred list is empty");
         return NULL;
     }
 
-    if (start->link == NULL) {
+    if (start->addr == NULL) {
         printf("\nThe Student node with usn:%s is deleted ", start->usn);
         count--;
         free(start);
         return NULL;
     }
     temp = start;
-    start = start->link;
+    start = start->addr;
     printf("\nThe Student node with usn:%s is deleted", temp->usn);
     count--;
     free(temp);
@@ -67,21 +67,21 @@ NODE insertend() {
         return temp;
     }
     cur = start;
-    while (cur->link != NULL) {
-        cur = cur->link;
+    while (cur->addr != NULL) {
+        cur = cur->addr;
     }
-    cur->link = temp;
+    cur->addr = temp;
     return start;
 }
 
 NODE deleteend() {
     NODE cur, prev;
     if (start == NULL) {
-        printf("\nLinked List is empty");
+        printf("\naddred List is empty");
         return NULL;
     }
 
-    if (start->link == NULL) {
+    if (start->addr == NULL) {
         printf("\nThe student node with the usn:%s is deleted", start->usn);
         free(start);
         count--;
@@ -90,14 +90,14 @@ NODE deleteend() {
 
     prev = NULL;
     cur = start;
-    while (cur->link != NULL) {
+    while (cur->addr != NULL) {
         prev = cur;
-        cur = cur->link;
+        cur = cur->addr;
     }
 
     printf("\nThe student node with the usn:%s is deleted", cur->usn);
     free(cur);
-    prev->link = NULL;
+    prev->addr = NULL;
     count--;
     return start;
 }
@@ -114,36 +114,10 @@ void display() {
     cur = start;
     while (cur != NULL) {
         printf("\n|%d| |USN:%s| |Name:%s| |Branch:%s| |Sem:%d| |Ph:%ld|", num, cur->usn, cur->name, cur->branch, cur->sem, cur->phone);
-        cur = cur->link;
+        cur = cur->addr;
         num++;
     }
     printf("\n No of student nodes is %d \n", count);
-}
-
-void stackdemo() {
-    int ch;
-    while (1) {
-        printf("\n--------Stack Demo using SLL--------\n");
-        printf("\n1:Push operation \n2: Pop operation \n3: Display \n4:Exit \n");
-        printf("\nEnter your choice for stack demo:");
-        scanf("%d", &ch);
-
-        switch (ch)
-        {
-        case 1:
-            start = insertfront();
-            break;
-        case 2:
-            start = deletefront();
-            break;
-        case 3:
-            display();
-            break;
-        default:
-            return;
-        }
-    }
-    return;
 }
 
 int main() {
@@ -155,8 +129,7 @@ int main() {
         printf("\n2:DisplayStatus");
         printf("\n3:InsertAtEnd");
         printf("\n4:DeleteAtEnd");
-        printf("\n5:Stack Demo using SLL(Insertion and Deletion at Front)");
-        printf("\n6:Exit \n");
+        printf("\n5:Exit \n");
         printf("\nEnter your choice:");
         scanf("%d", &ch);
 
@@ -182,10 +155,6 @@ int main() {
             break;
 
         case 5:
-            stackdemo();
-            break;
-
-        case 6:
             exit(0);
 
         default:
