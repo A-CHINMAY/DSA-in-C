@@ -1,49 +1,67 @@
 #include <stdio.h>
+#include <math.h> // For pow() function
 #define STACK_SIZE 50
+
 float stack[STACK_SIZE];
 
-void push(int *top, float value) {
+void push(int *top, float value)
+{
     (*top)++;
     stack[*top] = value;
 }
 
-float pop(int *top) {
+float pop(int *top)
+{
     float value = stack[*top];
     (*top)--;
     return value;
 }
 
-float operate(float opr1, float opr2, char symbol) {
-    switch (symbol) {
-        case '+':
-            return opr1 + opr2;
-        case '-':
-            return opr1 - opr2;
-        case '*':
-            return opr1 * opr2;
-        case '/':
-            return opr1 / opr2;
-        default:
-            return 0;
+float operate(float opr1, float opr2, char symbol)
+{
+    switch (symbol)
+    {
+    case '+':
+        return opr1 + opr2;
+    case '-':
+        return opr1 - opr2;
+    case '*':
+        return opr1 * opr2;
+    case '/':
+        return opr1 / opr2;
+    case '%':
+        return (int)opr1 % (int)opr2;
+    case '^':
+        return pow(opr1, opr2);
+    case '$':
+        return (opr1 > opr2) ? opr1 : opr2;
+    default:
+        printf("Unknown operator: %c\n", symbol);
+        return 0;
     }
 }
 
-float postfix_evaluate(char postfix[], int *s) {
+float postfix_evaluate(char postfix[], int *s)
+{
     int i;
     char symbol;
     float opr1, opr2, res, value;
 
-    for (i = 0; postfix[i] != '\0'; i++) {
+    for (i = 0; postfix[i] != '\0'; i++)
+    {
         symbol = postfix[i];
-        if (isdigit(symbol)) {
-            push(s, symbol - 48); // Convert char digit to integer
+        if (isdigit(symbol))
+        {
+            push(s, symbol - '0'); // Convert char digit to integer
         }
-        else if (isalpha(symbol)) {
+        else if (isalpha(symbol))
+        {
             printf("Enter the value for %c: ", symbol);
             scanf("%f", &value);
             push(s, value);
         }
-        else {
+        else
+        {
             opr2 = pop(s);
             opr1 = pop(s);
             res = operate(opr1, opr2, symbol);
@@ -53,7 +71,8 @@ float postfix_evaluate(char postfix[], int *s) {
     return pop(s);
 }
 
-int main() {
+int main()
+{
     char postfix[STACK_SIZE];
     int top = -1;
     float result;

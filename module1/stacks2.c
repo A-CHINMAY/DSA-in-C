@@ -29,8 +29,10 @@ int priority(char c) {
             return 2;
         case '*':
         case '/':
+        case '%':
             return 3;
         case '^':
+        case '$':
             return 4;
         default:
             return -1;
