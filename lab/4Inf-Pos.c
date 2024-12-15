@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-char stack[50];
+#define MAX 50
+char stack[MAX];
 int top = -1;
 
 void push(char c) {
@@ -72,7 +73,7 @@ void infix_to_postfix(char infix[], char postfix[]) {
 }
 
 void main() {
-    char infix[50], postfix[50];
+    char infix[MAX], postfix[MAX];
 
     printf("Enter the infix expression: ");
     scanf("%s", infix);

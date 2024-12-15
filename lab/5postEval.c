@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <math.h> // For pow() function
-#define STACK_SIZE 50
-
-float stack[STACK_SIZE];
+#include <math.h>
+#define MAX 50
+float stack[MAX];
+int top = -1;
 
 void push(int *top, float value) {
     (*top)++;
@@ -17,23 +17,23 @@ float pop(int *top) {
 
 float operate(float opr1, float opr2, char symbol) {
     switch (symbol) {
-    case '+':
-        return opr1 + opr2;
-    case '-':
-        return opr1 - opr2;
-    case '*':
-        return opr1 * opr2;
-    case '/':
-        return opr1 / opr2;
-    case '%':
-        return (int)opr1 % (int)opr2;
-    case '^':
-        return pow(opr1, opr2);
-    case '$':
-        return (opr1 > opr2) ? opr1 : opr2;
-    default:
-        printf("Unknown operator: %c\n", symbol);
-        return 0;
+        case '+':
+            return opr1 + opr2;
+        case '-':
+            return opr1 - opr2;
+        case '*':
+            return opr1 * opr2;
+        case '/':
+            return opr1 / opr2;
+        case '%':
+            return (int)opr1 % (int)opr2;
+        case '^':
+            return pow(opr1, opr2);
+        case '$':
+            return (opr1 > opr2) ? opr1 : opr2;
+        default:
+            printf("Unknown operator: %c\n", symbol);
+            return 0;
     }
 }
 
@@ -63,8 +63,7 @@ float postfix_evaluate(char postfix[], int *s) {
 }
 
 int main() {
-    char postfix[STACK_SIZE];
-    int top = -1;
+    char postfix[MAX];
     float result;
 
     printf("Enter postfix expression: ");
