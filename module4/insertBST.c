@@ -6,7 +6,7 @@ void insert_node(TreePointer *node, int num) {
         ptr = (TreePointer)malloc(sizeof(TreeNode));
 
         if (ptr == NULL) {
-            fprintf(stderr, "The memory is full\n");
+            printf("The memory not allocated\n");
             exit(1);
         }
         ptr->data = num;
@@ -14,7 +14,6 @@ void insert_node(TreePointer *node, int num) {
         ptr->right = NULL;
 
         if (*node) {
-            /* insert as child of temp */
             if (num < temp->data)
                 temp->left = ptr;
             else
@@ -25,3 +24,4 @@ void insert_node(TreePointer *node, int num) {
         }
     }
 }
+
